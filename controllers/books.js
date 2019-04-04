@@ -1,3 +1,4 @@
+
 // retrieve (GET)
 function getAll(req, res) {
     res.render('books', {
@@ -7,6 +8,15 @@ function getAll(req, res) {
     })
 }
 
+function getById(req, res) {
+    res.render('books-id', {
+        locals: {
+            welcomeID: `Welcome to myBooks, user: ${req.params.id}`
+        }
+    })
+}
+
 module.exports = {
-    getAll
+    getAll,
+    getById,
 }
